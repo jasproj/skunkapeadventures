@@ -1,219 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skunk Ape Adventures | Everglades Tours & Airboat Rides</title>
-  <meta name="description" content="Explore the Everglades with airboat tours, kayak adventures, wildlife encounters, and more near Everglades City, Florida. Find the Skunk Ape.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://skunkapeadventures.com/">
-  
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Skunk Ape Adventures">
-  <meta property="og:description" content="Explore the swamp. Find the Skunk Ape. Airboat tours, kayak trips & wildlife encounters near Everglades City.">
-  <meta property="og:image" content="https://skunkapeadventures.com/og-image.jpg">
-  <meta property="og:url" content="https://skunkapeadventures.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Skunk Ape Adventures">
-  <meta name="twitter:description" content="Explore the swamp. Find the Skunk Ape. Airboat tours, kayak trips & wildlife encounters near Everglades City.">
-  <meta name="twitter:image" content="https://skunkapeadventures.com/og-image.jpg">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- GA4 - Replace with actual ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Skunk Ape Adventures | Everglades Tours & Airboat Rides</title>
+    <meta name="description" content="Explore the Everglades with airboat tours, kayak adventures, wildlife encounters, and more near Everglades City, Florida. Find the Skunk Ape.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Skunk Ape Adventures">
+    <meta property="og:description" content="Explore the swamp. Find the Skunk Ape. Airboat tours, kayak trips & wildlife encounters near Everglades City.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skunkapeadventures.com">
+    <meta property="og:image" content="https://skunkapeadventures.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skunk Ape Adventures">
+    <meta name="twitter:description" content="Explore the swamp. Find the Skunk Ape. Airboat tours, kayak trips & wildlife encounters near Everglades City.">
+    <meta name="twitter:image" content="https://skunkapeadventures.com/og-image.jpg">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --cream: #FEF2E6;
+            --brown: #452A19;
+            --green: #598967;
+            --orange: #DD8932;
+            --orange-dark: #BA7227;
+            --olive: #494229;
+            --dark: #1a1a1a;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--brown);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           HEADER - TRANSPARENT OVERLAY ON HERO
+        ============================================ */
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-cta {
+            background: var(--orange);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+
+        .header-cta:hover {
+            background: var(--orange-dark);
+        }
+
+        .header-nav {
+            display: none;
+            gap: 24px;
+        }
+
+        .header-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                padding: 1.5rem 2rem;
+            }
+            .header-logo img {
+                height: 70px;
+            }
+            .header-nav {
+                display: flex;
+            }
+        }
+
+        /* ============================================
+           HERO - FULL SCREEN IMAGE/VIDEO
+        ============================================ */
+
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 1rem 2.5rem;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 100vh;
+                min-height: 100dvh;
+                padding: 3rem 2rem 4rem;
+            }
+        }
+
+        .hero-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-media img,
+        .hero-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-media img,
+            .hero-media video {
+                object-position: center right;
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                rgba(26, 26, 26, 0.95) 0%,
+                rgba(26, 26, 26, 0.7) 35%,
+                rgba(26, 26, 26, 0.3) 60%,
+                rgba(26, 26, 26, 0.1) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            line-height: 0.95;
+            margin-bottom: 12px;
+        }
+
+        .hero-title .white {
+            color: var(--white);
+        }
+
+        .hero-title .accent {
+            color: var(--orange);
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 5.5rem;
+            }
+        }
+
+        .hero-tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: var(--green);
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-tagline {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            color: var(--orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        @media (min-width: 480px) {
+            .hero-ctas {
+                flex-direction: row;
+                gap: 16px;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.2s;
+            min-height: 52px;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--brown);
+        }
+
+        /* ============================================
+           TOURS SECTION
+        ============================================ */
+
+        .section-header {
+            text-align: center;
+            padding: 3rem 1rem 1.5rem;
+        }
+
+        .section-badge {
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            color: var(--orange);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--brown);
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .filter-bar {
+            background: var(--white);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            border-bottom: 1px solid rgba(69, 42, 25, 0.1);
+        }
+
+        .filter-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .filter-group.search-group {
+            grid-column: span 2;
+        }
+
+        @media (min-width: 768px) {
+            .filter-inner {
+                grid-template-columns: 1fr 1fr 2fr;
+            }
+            .filter-group.search-group {
+                grid-column: auto;
+            }
+        }
+
+        .filter-group label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--olive);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 12px;
+            border: 2px solid rgba(69, 42, 25, 0.15);
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
+            background: var(--white);
+            color: var(--brown);
+            min-height: 48px;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .results-count {
+            max-width: 1200px;
+            margin: 12px auto 0;
+            padding: 0 1rem;
+            font-size: 13px;
+            color: var(--olive);
+        }
+
+        .tours-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .tours-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tours-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--olive);
+            grid-column: 1 / -1;
+        }
+
+        /* Tour Card */
+        .tour-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(69, 42, 25, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(69, 42, 25, 0.12);
+        }
+
+        .tour-image {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .tour-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--orange);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .tour-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: var(--green);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .tour-content {
+            padding: 1rem;
+        }
+
+        .tour-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--brown);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .tour-company {
+            font-size: 12px;
+            color: var(--olive);
+            margin-bottom: 8px;
+        }
+
+        .tour-description {
+            font-size: 13px;
+            color: var(--olive);
+            margin-bottom: 12px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .tour-cta {
+            display: block;
+            background: var(--orange);
+            color: var(--white);
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            min-height: 48px;
+            line-height: 24px;
+        }
+
+        .tour-cta:hover {
+            background: var(--orange-dark);
+        }
+
+        /* ============================================
+           LEGEND SECTION
+        ============================================ */
+
+        .legend-section {
+            background: var(--olive);
+            padding: 4rem 1.5rem;
+        }
+
+        .legend-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .legend-section .section-badge {
+            color: var(--orange);
+        }
+
+        .legend-section .section-title {
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .legend-section p {
+            color: var(--cream);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+        ============================================ */
+
+        .about-section {
+            padding: 4rem 1.5rem;
+        }
+
+        .about-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section p {
+            color: var(--olive);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+
+        footer {
+            background: var(--brown);
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: var(--orange-dark);
+            transform: scale(1.1);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact p {
+            color: var(--cream);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .footer-contact a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .footer-legal {
+            color: var(--cream);
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .footer-legal a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .footer-note {
+            max-width: 500px;
+            margin: 1.5rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(254, 242, 230, 0.15);
+            color: var(--green);
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* ============================================
+           NO RESULTS
+        ============================================ */
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            grid-column: 1 / -1;
+        }
+
+        .no-results h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--brown);
+            margin-bottom: 8px;
+        }
+
+        .no-results p {
+            color: var(--olive);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <img src="logo.png" alt="Skunk Ape Adventures">
-      </a>
-      <nav class="nav">
-        <a href="#tours">Tours</a>
-        <a href="#about">About</a>
-        <a href="/blog/">Blog</a>
-      </nav>
-      <a href="#tours" class="header-cta">Find Tours</a>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Header - sits on top of hero -->
+        <header class="header">
+            <a href="/" class="header-logo">
+                <img src="logo.png" alt="Skunk Ape Adventures">
+            </a>
+            <nav class="header-nav">
+                <a href="#tours">Tours</a>
+                <a href="#legend">The Legend</a>
+                <a href="#about">About</a>
+            </nav>
+            <a href="#tours" class="header-cta">Find Tours</a>
+        </header>
 
-  <!-- Hero Section - Background Image (video-ready) -->
-  <section class="hero">
-    <!-- Background - swap to video when ready -->
-    <div class="hero-media">
-      <!-- Uncomment for video:
-      <video autoplay muted loop playsinline poster="hero-bg.jpg" id="hero-video">
-        <source src="hero-video.mp4" type="video/mp4">
-      </video>
-      -->
-      <img src="hero-bg.jpg" alt="" class="hero-image">
-      <div class="hero-overlay"></div>
-    </div>
-    
-    <!-- Hero Content -->
-    <div class="hero-content">
-      <span class="hero-badge">Everglades City's Wildest Tours</span>
-      
-      <h1 class="hero-title">
-        <span class="title-white">Skunk Ape</span>
-        <span class="title-accent">Adventures</span>
-      </h1>
-      
-      <p class="hero-tagline">Explore the swamp. Find the Skunk Ape.</p>
-      
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">150+</span>
-          <span class="stat-label">Tours</span>
+        <!-- Background Image -->
+        <div class="hero-media">
+            <img src="hero-bg.jpg" alt="Everglades swamp at sunset">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="stat">
-          <span class="stat-number">20mi</span>
-          <span class="stat-label">Radius</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Wild</span>
-        </div>
-      </div>
-      
-      <div class="hero-ctas">
-        <a href="#tours" class="btn btn-primary">Find Your Tour</a>
-        <a href="#legend" class="btn btn-outline">The Legend</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Tours Section -->
-  <section class="tours-section" id="tours">
-    <div class="section-header">
-      <span class="section-badge">Book Your Adventure</span>
-      <h2 class="section-title">Choose Your Experience</h2>
-    </div>
-    
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <div class="filter-inner">
-        <div class="filter-group">
-          <label for="activity-filter">Activity</label>
-          <select id="activity-filter">
-            <option value="">All Activities</option>
-            <option value="airboat">Airboat Tours</option>
-            <option value="kayak">Kayak & Paddle</option>
-            <option value="wildlife">Wildlife & Gators</option>
-            <option value="fishing">Fishing</option>
-            <option value="boat-tour">Boat Tours</option>
-            <option value="eco-tour">Eco Tours</option>
-            <option value="night">Night Tours</option>
-            <option value="private">Private Charters</option>
-          </select>
+        <!-- Hero Content - at bottom -->
+        <div class="hero-content">
+            <span class="hero-badge">Everglades City's Wildest Tours</span>
+            
+            <h1 class="hero-title">
+                <span class="white">Skunk Ape</span><br>
+                <span class="accent">Adventures</span>
+            </h1>
+            
+            <p class="hero-tagline">Explore the swamp. Find the Skunk Ape.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Tours</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20mi</span>
+                    <span class="stat-label">Radius</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Wild</span>
+                </div>
+            </div>
+            
+            <div class="hero-ctas">
+                <a href="#tours" class="btn btn-primary">Find Your Tour</a>
+                <a href="#legend" class="btn btn-outline">The Legend</a>
+            </div>
         </div>
-        <div class="filter-group">
-          <label for="price-filter">Price</label>
-          <select id="price-filter">
-            <option value="">Any Price</option>
-            <option value="0-50">Under $50</option>
-            <option value="50-100">$50 - $100</option>
-            <option value="100-200">$100 - $200</option>
-            <option value="200+">$200+</option>
-          </select>
+    </section>
+
+    <!-- Tours Section -->
+    <section id="tours">
+        <div class="section-header">
+            <span class="section-badge">Book Your Adventure</span>
+            <h2 class="section-title">Choose Your Experience</h2>
         </div>
-        <div class="filter-group search-group">
-          <label for="search-input">Search</label>
-          <input type="text" id="search-input" placeholder="Search tours...">
+        
+        <div class="filter-bar">
+            <div class="filter-inner">
+                <div class="filter-group">
+                    <label for="activity-filter">Activity</label>
+                    <select id="activity-filter">
+                        <option value="">All Activities</option>
+                        <option value="airboat">Airboat Tours</option>
+                        <option value="kayak">Kayak & Paddle</option>
+                        <option value="wildlife">Wildlife & Gators</option>
+                        <option value="fishing">Fishing</option>
+                        <option value="boat-tour">Boat Tours</option>
+                        <option value="eco-tour">Eco Tours</option>
+                        <option value="night">Night Tours</option>
+                        <option value="private">Private Charters</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Price</label>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="0-50">Under $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                </div>
+                <div class="filter-group search-group">
+                    <label for="search-input">Search</label>
+                    <input type="text" id="search-input" placeholder="Search tours...">
+                </div>
+            </div>
+            <div class="results-count"><span id="tour-count">0</span> tours available</div>
         </div>
-      </div>
-      <div class="results-count"><span id="tour-count">0</span> tours available</div>
-    </div>
-    
-    <!-- Tour Grid -->
-    <div class="tours-grid" id="tours-container">
-      <div class="loading">Loading tours...</div>
-    </div>
-  </section>
+        
+        <div class="tours-grid" id="tours-container">
+            <div class="loading">Loading tours...</div>
+        </div>
+    </section>
 
-  <!-- Legend Section -->
-  <section class="legend-section" id="legend">
-    <div class="legend-inner">
-      <span class="section-badge">The Legend</span>
-      <h2 class="section-title">What is the Skunk Ape?</h2>
-      <p>Florida's Bigfoot. A creature of the swamps. Sightings go back decades — a large, ape-like figure moving through the cypress trees, leaving behind nothing but footprints and a smell you won't forget.</p>
-      <p>The Seminole and Miccosukee have known these waters for centuries. They'll tell you: something's out there.</p>
-      <p>We're not saying you'll find the Skunk Ape on one of these tours. But we're not saying you won't.</p>
-    </div>
-  </section>
+    <!-- Legend Section -->
+    <section class="legend-section" id="legend">
+        <div class="legend-inner">
+            <span class="section-badge">The Legend</span>
+            <h2 class="section-title">What is the Skunk Ape?</h2>
+            <p>Florida's Bigfoot. A creature of the swamps. Sightings go back decades — a large, ape-like figure moving through the cypress trees, leaving behind nothing but footprints and a smell you won't forget.</p>
+            <p>The Seminole and Miccosukee have known these waters for centuries. They'll tell you: something's out there.</p>
+            <p>We're not saying you'll find the Skunk Ape on one of these tours. But we're not saying you won't.</p>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section class="about-section" id="about">
-    <div class="about-inner">
-      <span class="section-badge">Your Gateway</span>
-      <h2 class="section-title">Everglades City & Beyond</h2>
-      <p>We connect you with the best local tour operators in Everglades City, Chokoloskee, and the Ten Thousand Islands. Airboats, kayaks, fishing charters, wildlife encounters — all from captains who know these waters.</p>
-      <p>1.5 million acres of sawgrass prairies, cypress swamps, and mangrove forests. The wildest place left in Florida.</p>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-inner">
+            <span class="section-badge">Your Gateway</span>
+            <h2 class="section-title">Everglades City & Beyond</h2>
+            <p>We connect you with the best local tour operators in Everglades City, Chokoloskee, and the Ten Thousand Islands. Airboats, kayaks, fishing charters, wildlife encounters — all from captains who know these waters.</p>
+            <p>1.5 million acres of sawgrass prairies, cypress swamps, and mangrove forests. The wildest place left in Florida.</p>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="logo-transparent.png" alt="Skunk Ape Adventures">
-      </div>
-      
-      <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="Yelp">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 0 1 1.596-.206 9.194 9.194 0 0 1 2.364 3.252 1.073 1.073 0 0 1-.686 1.459zm-5.025 3.152l4.942 1.606a1.072 1.072 0 0 1 .636 1.48 9.316 9.316 0 0 1-2.47 3.169 1.073 1.073 0 0 1-1.592-.26l-2.76-4.409c-.528-.845.288-1.894 1.236-1.584zm-2.787-1.86l.012 5.184a1.072 1.072 0 0 1-1.108 1.076 9.316 9.316 0 0 1-3.966-1.123 1.073 1.073 0 0 1-.378-1.56l2.87-4.252c.564-.836 1.87-.543 1.978.436l.592.239zm-2.905-3.238L4.8 8.406a1.072 1.072 0 0 1-.378-1.56 9.316 9.316 0 0 1 3.204-2.65 1.073 1.073 0 0 1 1.536.468l1.91 4.666c.373.91-.628 1.74-1.514 1.258l-.114-.06zm-.121-6.752l1.814 4.702c.354.918-.654 1.77-1.524 1.29L4.788 7.078a1.072 1.072 0 0 1-.346-1.567 9.194 9.194 0 0 1 3.398-2.532 1.073 1.073 0 0 1 1.483.517z"/></svg>
-        </a>
-      </div>
-      
-      <div class="footer-info">
-        <p class="footer-location">📍 Everglades City, Florida</p>
-        <p class="footer-phone">📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
-      </div>
-      
-      <div class="footer-legal">
-        <p>&copy; 2025 Skunk Ape Adventures. All rights reserved.</p>
-        <p class="footer-partner">A <a href="https://walktheplankadventures.com">Walk The Plank Adventures</a> Partner</p>
-      </div>
-    </div>
-    
-    <div class="footer-note">
-      <p><em>Locals say something's out there in the swamp. We're not saying it's the Skunk Ape. But we're not saying it isn't.</em></p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="logo-transparent.png" alt="Skunk Ape Adventures">
+        </div>
+        
+        <div class="footer-social">
+            <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+        </div>
+        
+        <div class="footer-contact">
+            <p>📍 Everglades City, Florida</p>
+            <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+        </div>
+        
+        <p class="footer-legal">
+            © 2025 Skunk Ape Adventures. All rights reserved.<br>
+            A <a href="https://walktheplankadventures.com">Walk The Plank Adventures</a> Partner
+        </p>
+        
+        <p class="footer-note">
+            Locals say something's out there in the swamp. We're not saying it's the Skunk Ape. But we're not saying it isn't.
+        </p>
+    </footer>
 
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
