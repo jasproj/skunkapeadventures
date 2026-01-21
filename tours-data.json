@@ -1,0 +1,53 @@
+[
+  {
+    "id": "sample-1",
+    "name": "Everglades Airboat Adventure",
+    "company": "Sample Operator",
+    "island": "united states/florida/everglades city",
+    "location": "United States/Florida/Everglades City",
+    "tags": ["Airboat", "Wildlife"],
+    "image": "https://images.unsplash.com/photo-1564409972016-2825589beaed?w=800",
+    "bookingLink": "#",
+    "price": 55,
+    "description": "Placeholder tour - run FareHarbor scraper to populate real tour data.",
+    "duration": 60,
+    "durationText": "1 hour",
+    "timeOfDay": "morning",
+    "freeCancellation": true,
+    "qualityScore": 100
+  },
+  {
+    "id": "sample-2",
+    "name": "Mangrove Kayak Eco Tour",
+    "company": "Sample Operator",
+    "island": "united states/florida/everglades city",
+    "location": "United States/Florida/Everglades City",
+    "tags": ["Kayak", "Eco Tour"],
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "bookingLink": "#",
+    "price": 89,
+    "description": "Placeholder tour - run FareHarbor scraper to populate real tour data.",
+    "duration": 180,
+    "durationText": "3 hours",
+    "timeOfDay": "morning",
+    "freeCancellation": true,
+    "qualityScore": 95
+  },
+  {
+    "id": "sample-3",
+    "name": "Gator Night Tour",
+    "company": "Sample Operator",
+    "island": "united states/florida/everglades city",
+    "location": "United States/Florida/Everglades City",
+    "tags": ["Night Tour", "Wildlife"],
+    "image": "https://images.unsplash.com/photo-1509479200622-4503f27f12ef?w=800",
+    "bookingLink": "#",
+    "price": 75,
+    "description": "Placeholder tour - run FareHarbor scraper to populate real tour data.",
+    "duration": 120,
+    "durationText": "2 hours",
+    "timeOfDay": "evening",
+    "freeCancellation": true,
+    "qualityScore": 90
+  }
+]

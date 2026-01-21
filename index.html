@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skunk Ape Adventures | Everglades Tours & Airboat Rides</title>
+  <meta name="description" content="Explore the Everglades with airboat tours, kayak adventures, wildlife encounters, and more near Everglades City, Florida. Find the Skunk Ape.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://skunkapeadventures.com/">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Skunk Ape Adventures | Everglades Tours">
+  <meta property="og:description" content="Airboat tours, kayak adventures, and wildlife encounters in the Florida Everglades.">
+  <meta property="og:image" content="https://skunkapeadventures.com/og-image.jpg">
+  <meta property="og:url" content="https://skunkapeadventures.com/">
+  <meta property="og:type" content="website">
+  
+  <!-- GA4 - Replace with actual ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Skunk Ape Adventures" height="50">
+      </a>
+      <nav class="nav">
+        <a href="#tours">Tours</a>
+        <a href="#about">About</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero - Mobile optimized ≤120px -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Everglades Tours & Adventures</h1>
+      <p class="tagline">Explore the swamp. Find the Skunk Ape.</p>
+    </div>
+  </section>
+
+  <!-- Search/Filter Bar -->
+  <section class="filter-bar" id="tours">
+    <div class="filter-inner">
+      <div class="filter-group">
+        <label for="activity-filter">Activity</label>
+        <select id="activity-filter">
+          <option value="">All Activities</option>
+          <option value="airboat">Airboat Tours</option>
+          <option value="kayak">Kayak & Paddle</option>
+          <option value="wildlife">Wildlife & Gators</option>
+          <option value="fishing">Fishing</option>
+          <option value="boat-tour">Boat Tours</option>
+          <option value="eco-tour">Eco Tours</option>
+          <option value="night">Night Tours</option>
+          <option value="private">Private Charters</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="price-filter">Price</label>
+        <select id="price-filter">
+          <option value="">Any Price</option>
+          <option value="0-50">Under $50</option>
+          <option value="50-100">$50 - $100</option>
+          <option value="100-200">$100 - $200</option>
+          <option value="200+">$200+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="search-input">Search</label>
+        <input type="text" id="search-input" placeholder="Search tours...">
+      </div>
+    </div>
+    <div class="results-count"><span id="tour-count">0</span> tours available</div>
+  </section>
+
+  <!-- Tour Grid -->
+  <main class="tours-grid" id="tours-container">
+    <!-- Tours loaded via JS -->
+    <div class="loading">Loading tours...</div>
+  </main>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <h2>Your Gateway to the Everglades</h2>
+      <p>We connect you with the best local tour operators in Everglades City, Chokoloskee, and the Ten Thousand Islands. Airboats, kayaks, fishing charters, wildlife encounters — all from captains who know these waters.</p>
+      <p>The Everglades is 1.5 million acres of sawgrass prairies, cypress swamps, and mangrove forests. The Seminole and Miccosukee have called it home for centuries. And somewhere out there? The Skunk Ape.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Skunk Ape Adventures" height="60">
+        <p>Everglades City, Florida</p>
+      </div>
+      <div class="footer-links">
+        <a href="#tours">Tours</a>
+        <a href="/blog/">Blog</a>
+        <a href="mailto:info@skunkapeadventures.com">Contact</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2025 Skunk Ape Adventures. Part of the <a href="https://walktheplankadventures.com">Walk The Plank Adventures</a> network.</p>
+        <p class="disclaimer">We earn a commission when you book through our links at no extra cost to you.</p>
+      </div>
+    </div>
+    <div class="footer-note">
+      <p><em>Locals say something's out there in the swamp. We're not saying it's the Skunk Ape. But we're not saying it isn't.</em></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
