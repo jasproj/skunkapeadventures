@@ -20,6 +20,11 @@
   <meta property="og:url" content="https://skunkapeadventures.com/">
   <meta property="og:type" content="website">
   
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- GA4 - Replace with actual ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -32,75 +37,131 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="logo.png" alt="Skunk Ape Adventures" height="50">
+        <img src="logo.png" alt="Skunk Ape Adventures">
       </a>
       <nav class="nav">
         <a href="#tours">Tours</a>
         <a href="#about">About</a>
         <a href="/blog/">Blog</a>
       </nav>
+      <a href="#tours" class="header-cta">Find Tours</a>
     </div>
   </header>
 
-  <!-- Hero - Mobile optimized ≤120px -->
+  <!-- Hero Section - Video Background -->
   <section class="hero">
+    <!-- Video Background -->
+    <div class="hero-video">
+      <video autoplay muted loop playsinline poster="hero-poster.jpg" id="hero-video">
+        <!-- <source src="hero-video.mp4" type="video/mp4"> -->
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <!-- Hero Content -->
     <div class="hero-content">
-      <h1>Everglades Tours & Adventures</h1>
-      <p class="tagline">Explore the swamp. Find the Skunk Ape.</p>
+      <span class="hero-badge">Everglades City's Wildest Tours</span>
+      
+      <h1 class="hero-title">
+        <span class="title-white">Skunk Ape</span>
+        <span class="title-accent">Adventures</span>
+      </h1>
+      
+      <p class="hero-tagline">Explore the swamp. Find the Skunk Ape.</p>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">Tours</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">20mi</span>
+          <span class="stat-label">Radius</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Wild</span>
+        </div>
+      </div>
+      
+      <div class="hero-ctas">
+        <a href="#tours" class="btn btn-primary">Find Your Tour</a>
+        <a href="#legend" class="btn btn-outline">The Legend</a>
+      </div>
     </div>
   </section>
 
-  <!-- Search/Filter Bar -->
-  <section class="filter-bar" id="tours">
-    <div class="filter-inner">
-      <div class="filter-group">
-        <label for="activity-filter">Activity</label>
-        <select id="activity-filter">
-          <option value="">All Activities</option>
-          <option value="airboat">Airboat Tours</option>
-          <option value="kayak">Kayak & Paddle</option>
-          <option value="wildlife">Wildlife & Gators</option>
-          <option value="fishing">Fishing</option>
-          <option value="boat-tour">Boat Tours</option>
-          <option value="eco-tour">Eco Tours</option>
-          <option value="night">Night Tours</option>
-          <option value="private">Private Charters</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="price-filter">Price</label>
-        <select id="price-filter">
-          <option value="">Any Price</option>
-          <option value="0-50">Under $50</option>
-          <option value="50-100">$50 - $100</option>
-          <option value="100-200">$100 - $200</option>
-          <option value="200+">$200+</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="search-input">Search</label>
-        <input type="text" id="search-input" placeholder="Search tours...">
-      </div>
+  <!-- Tours Section -->
+  <section class="tours-section" id="tours">
+    <div class="section-header">
+      <span class="section-badge">Book Your Adventure</span>
+      <h2 class="section-title">Choose Your Experience</h2>
     </div>
-    <div class="results-count"><span id="tour-count">0</span> tours available</div>
+    
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <div class="filter-group">
+          <label for="activity-filter">Activity</label>
+          <select id="activity-filter">
+            <option value="">All Activities</option>
+            <option value="airboat">Airboat Tours</option>
+            <option value="kayak">Kayak & Paddle</option>
+            <option value="wildlife">Wildlife & Gators</option>
+            <option value="fishing">Fishing</option>
+            <option value="boat-tour">Boat Tours</option>
+            <option value="eco-tour">Eco Tours</option>
+            <option value="night">Night Tours</option>
+            <option value="private">Private Charters</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="price-filter">Price</label>
+          <select id="price-filter">
+            <option value="">Any Price</option>
+            <option value="0-50">Under $50</option>
+            <option value="50-100">$50 - $100</option>
+            <option value="100-200">$100 - $200</option>
+            <option value="200+">$200+</option>
+          </select>
+        </div>
+        <div class="filter-group search-group">
+          <label for="search-input">Search</label>
+          <input type="text" id="search-input" placeholder="Search tours...">
+        </div>
+      </div>
+      <div class="results-count"><span id="tour-count">0</span> tours available</div>
+    </div>
+    
+    <!-- Tour Grid -->
+    <div class="tours-grid" id="tours-container">
+      <div class="loading">Loading tours...</div>
+    </div>
   </section>
 
-  <!-- Tour Grid -->
-  <main class="tours-grid" id="tours-container">
-    <!-- Tours loaded via JS -->
-    <div class="loading">Loading tours...</div>
-  </main>
+  <!-- Legend Section -->
+  <section class="legend-section" id="legend">
+    <div class="legend-inner">
+      <span class="section-badge">The Legend</span>
+      <h2 class="section-title">What is the Skunk Ape?</h2>
+      <p>Florida's Bigfoot. A creature of the swamps. Sightings go back decades — a large, ape-like figure moving through the cypress trees, leaving behind nothing but footprints and a smell you won't forget.</p>
+      <p>The Seminole and Miccosukee have known these waters for centuries. They'll tell you: something's out there.</p>
+      <p>We're not saying you'll find the Skunk Ape on one of these tours. But we're not saying you won't.</p>
+    </div>
+  </section>
 
   <!-- About Section -->
-  <section class="about" id="about">
+  <section class="about-section" id="about">
     <div class="about-inner">
-      <h2>Your Gateway to the Everglades</h2>
+      <span class="section-badge">Your Gateway</span>
+      <h2 class="section-title">Everglades City & Beyond</h2>
       <p>We connect you with the best local tour operators in Everglades City, Chokoloskee, and the Ten Thousand Islands. Airboats, kayaks, fishing charters, wildlife encounters — all from captains who know these waters.</p>
-      <p>The Everglades is 1.5 million acres of sawgrass prairies, cypress swamps, and mangrove forests. The Seminole and Miccosukee have called it home for centuries. And somewhere out there? The Skunk Ape.</p>
+      <p>1.5 million acres of sawgrass prairies, cypress swamps, and mangrove forests. The wildest place left in Florida.</p>
     </div>
   </section>
 
@@ -108,19 +169,35 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="logo.png" alt="Skunk Ape Adventures" height="60">
-        <p>Everglades City, Florida</p>
+        <img src="logo.png" alt="Skunk Ape Adventures">
       </div>
-      <div class="footer-links">
-        <a href="#tours">Tours</a>
-        <a href="/blog/">Blog</a>
-        <a href="mailto:info@skunkapeadventures.com">Contact</a>
+      
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Yelp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 0 1 1.596-.206 9.194 9.194 0 0 1 2.364 3.252 1.073 1.073 0 0 1-.686 1.459zm-5.025 3.152l4.942 1.606a1.072 1.072 0 0 1 .636 1.48 9.316 9.316 0 0 1-2.47 3.169 1.073 1.073 0 0 1-1.592-.26l-2.76-4.409c-.528-.845.288-1.894 1.236-1.584zm-2.787-1.86l.012 5.184a1.072 1.072 0 0 1-1.108 1.076 9.316 9.316 0 0 1-3.966-1.123 1.073 1.073 0 0 1-.378-1.56l2.87-4.252c.564-.836 1.87-.543 1.978.436l.592.239zm-2.905-3.238L4.8 8.406a1.072 1.072 0 0 1-.378-1.56 9.316 9.316 0 0 1 3.204-2.65 1.073 1.073 0 0 1 1.536.468l1.91 4.666c.373.91-.628 1.74-1.514 1.258l-.114-.06zm-.121-6.752l1.814 4.702c.354.918-.654 1.77-1.524 1.29L4.788 7.078a1.072 1.072 0 0 1-.346-1.567 9.194 9.194 0 0 1 3.398-2.532 1.073 1.073 0 0 1 1.483.517z"/></svg>
+        </a>
       </div>
+      
+      <div class="footer-info">
+        <p class="footer-location">📍 Everglades City, Florida</p>
+        <p class="footer-phone">📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+      </div>
+      
       <div class="footer-legal">
-        <p>&copy; 2025 Skunk Ape Adventures. Part of the <a href="https://walktheplankadventures.com">Walk The Plank Adventures</a> network.</p>
-        <p class="disclaimer">We earn a commission when you book through our links at no extra cost to you.</p>
+        <p>&copy; 2025 Skunk Ape Adventures. All rights reserved.</p>
+        <p class="footer-partner">A <a href="https://walktheplankadventures.com">Walk The Plank Adventures</a> Partner</p>
       </div>
     </div>
+    
     <div class="footer-note">
       <p><em>Locals say something's out there in the swamp. We're not saying it's the Skunk Ape. But we're not saying it isn't.</em></p>
     </div>
